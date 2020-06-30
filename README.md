@@ -1,5 +1,9 @@
 ## Blockchain Course 6 Exercises
 
+```
+node_modules/truffle/build/cli.bundled.js test
+```
+
 To install, download or clone the repo, then move to the required exercise branch with either:
 
 - `git checkout ExerciseC6A`

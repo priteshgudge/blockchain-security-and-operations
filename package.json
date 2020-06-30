@@ -1,19 +1,19 @@
 {
-  "name": "blockchain-day1",
+  "name": "",
   "version": "1.0.0",
   "description": "",
   "directories": {
     "test": "test"
   },
-  "repository": "https://github.com/techbubble/blockchain-day1",
+  "repository": "",
   "license": "MIT",
   "scripts": {
-    "test": "truffle test test/ExerciseC6A.js"
+    "test": "node_modules/truffle/build/cli.bundled.js test test/ExerciseC6A.js"
   },
-  "author": "Nik Kalyani <nik@kalyani.com> https://www.kalyani.com",
+  "author": "Pritesh Gudge <priteshgudge@gmail.com>",
   "devDependencies": {
-    "truffle": "^4.1.14",
-    "truffle-hdwallet-provider": "^0.0.5"
+    "truffle": "5.0.1",
+    "truffle-hdwallet-provider": "1.0.2"
   },
   "dependencies": {}
 }
