@@ -6,7 +6,7 @@ contract ExerciseC6A {
     /*                                       DATA VARIABLES                                     */
     /********************************************************************************************/
 
-
+    uint constant M = 2;
     struct UserProfile {
         bool isRegistered;
         bool isAdmin;
@@ -16,8 +16,12 @@ contract ExerciseC6A {
     
     mapping(address => UserProfile) userProfiles;   // Mapping for storing user profiles
 
+<<<<<<< HEAD
     bool private operational = true;
 
+=======
+    bool private operational = true;                                    // Blocks all state changes throughout the contract if false
+>>>>>>> bcc7207b2e66ea93f2c48cd16f1295f738759275
 
     /********************************************************************************************/
     /*                                       EVENT DEFINITIONS                                  */
@@ -53,11 +57,26 @@ contract ExerciseC6A {
         _;
     }
 
+<<<<<<< HEAD
     modifier requireIsOperational(){
         require(operational == true, "Contract is Not operational");
         _;
     }
 
+=======
+    /**
+    * @dev Modifier that requires the "operational" boolean variable to be "true"
+    *      This is used on all state changing functions to pause the contract in 
+    *      the event there is an issue that needs to be fixed
+    */
+    modifier requireIsOperational() 
+    {
+        require(operational, "Contract is currently not operational");
+        _;  // All modifiers require an "_" which indicates where the function body will be added
+    }
+
+
+>>>>>>> bcc7207b2e66ea93f2c48cd16f1295f738759275
     /********************************************************************************************/
     /*                                       UTILITY FUNCTIONS                                  */
     /********************************************************************************************/
@@ -79,6 +98,7 @@ contract ExerciseC6A {
         return userProfiles[account].isRegistered;
     }
 
+<<<<<<< HEAD
     function setOperationalStatus( bool status) requireContractOwner public{
         operational = status;
     }
@@ -110,6 +130,19 @@ contract ExerciseC6A {
             operational = mode;      
             multiCalls = new address[](0);      
         }
+=======
+    /**
+    * @dev Get operating status of contract
+    *
+    * @return A bool that is the current operating status
+    */      
+    function isOperational() 
+                            public 
+                            view 
+                            returns(bool) 
+    {
+        return operational;
+>>>>>>> bcc7207b2e66ea93f2c48cd16f1295f738759275
     }
 
     /********************************************************************************************/
@@ -122,6 +155,7 @@ contract ExerciseC6A {
                                     bool isAdmin
                                 )
                                 external
+                                requireIsOperational
                                 requireContractOwner
                                 requireIsOperational
     {
@@ -132,10 +166,28 @@ contract ExerciseC6A {
                                                 isAdmin: isAdmin
                                             });
     }
+<<<<<<< HEAD
 
     function isOperational() public view returns(bool){
          return operational;
     }
+=======
+        /**
+    * @dev Sets contract operations on/off
+    *
+    * When operational mode is disabled, all write transactions except for this one will fail
+    */    
+    function setOperatingStatus
+                            (
+                                bool mode
+                            ) 
+                            external
+                            requireContractOwner
+    {
+            operational = mode;      
+    }
+
+>>>>>>> bcc7207b2e66ea93f2c48cd16f1295f738759275
 }
 
 

@@ -8,12 +8,23 @@
   "repository": "",
   "license": "MIT",
   "scripts": {
+<<<<<<< HEAD
     "test": "node_modules/truffle/build/cli.bundled.js test test/ExerciseC6A.js"
+=======
+    "test": "truffle test test/ExerciseC6B.js"
+>>>>>>> bcc7207b2e66ea93f2c48cd16f1295f738759275
   },
   "author": "Pritesh Gudge <priteshgudge@gmail.com>",
   "devDependencies": {
+<<<<<<< HEAD
     "truffle": "5.0.1",
     "truffle-hdwallet-provider": "1.0.2"
+=======
+    "bignumber": "1.1.0",
+    "openzeppelin-solidity": "^1.10.0",
+    "truffle": "^4.1.14",
+    "truffle-hdwallet-provider": "^0.0.5"
+>>>>>>> bcc7207b2e66ea93f2c48cd16f1295f738759275
   },
   "dependencies": {}
 }
