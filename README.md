@@ -48,3 +48,12 @@ This code was created with the following versions of tools:
 * Ensure you have at least the versions of the tools specified above
 * Delete node_modules folder and run "npm install" to refresh dependencies
 * If you get compiler errors, change the "pragma" line in all .sol files to match your version
+
+
+## Concepts
+
+* Ethereum Operations: Stop Loss and Multi-party Consenseus
+* Receive,Transfer, Send Funds
+
+
+![Funds transfer](/images/receive_transfer.png)
