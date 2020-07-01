@@ -125,7 +125,7 @@ contract ExerciseC6C {
 
                                 )
                                 external
-                                requireContractOwner
+                                // requireContractOwner removing requirement
     {
         require(employees[id].isRegistered, "Employee is not registered.");
 
