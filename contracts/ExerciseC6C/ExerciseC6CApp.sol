@@ -5,6 +5,7 @@ pragma solidity ^0.4.25;
 // More info: https://www.nccgroup.trust/us/about-us/newsroom-and-events/blog/2018/november/smart-contract-insecurity-bad-arithmetic/
 
 import "../../node_modules/openzeppelin-solidity/contracts/math/SafeMath.sol";
+import "./ExerciseC6C.sol";
 
 
 contract ExerciseC6CApp {
@@ -12,6 +13,8 @@ contract ExerciseC6CApp {
 
 
     address private contractOwner;              // Account used to deploy contract
+    
+    ExerciseC6C private dataContract ;//= ExerciseC6C.deploy();
 
     modifier requireContractOwner()
     {
@@ -55,15 +58,11 @@ contract ExerciseC6CApp {
                                 external
                                 requireContractOwner
     {
-        updateEmployee(
+        dataContract.updateEmployee(
                         id,
                         amount,
                         calculateBonus(amount)
         );
-    }
-
-    function updateEmployee(string id, uint256 amount, uint256) private {
-
     }
 
 }
