@@ -6,8 +6,8 @@ node_modules/truffle/build/cli.bundled.js test
 
 To install, download or clone the repo, then move to the required exercise branch with either:
 
-- `git checkout ExerciseC6A`
-- `git checkout ExerciseC6B`
+- `git checkout ExerciseC6A` --> For Stop Loss & MultiParty Consensus
+- `git checkout ExerciseC6B` --> Receive, Transfer & Send Funds
 - `git checkout ExerciseC6C`
 - `git checkout ExerciseC6D`
 
