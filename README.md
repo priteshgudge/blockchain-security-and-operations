@@ -8,7 +8,7 @@ To install, download or clone the repo, then move to the required exercise branc
 
 - `git checkout ExerciseC6A` --> For Stop Loss & MultiParty Consensus
 - `git checkout ExerciseC6B` --> Receive, Transfer & Send Funds
-- `git checkout ExerciseC6C`
+- `git checkout ExerciseC6C` --> Smart COntract Upgradability
 - `git checkout ExerciseC6D`
 
 and for each exercise run:
