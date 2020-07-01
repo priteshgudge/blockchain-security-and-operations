@@ -26,6 +26,8 @@ contract ExerciseC6C {
     address private contractOwner;              // Account used to deploy contract
     mapping(string => Profile) employees;      // Mapping for storing employees
 
+    mapping(address => uint256) authorizedContracts;
+
     /********************************************************************************************/
     /*                                       EVENT DEFINITIONS                                  */
     /********************************************************************************************/
@@ -60,6 +62,10 @@ contract ExerciseC6C {
         _;
     }
 
+    modifier isCallerAuthorized(){
+        require(authorizedContracts[msg.sender] == 1, "Contract is not authorized");
+        _;
+    }
     /********************************************************************************************/
     /*                                       UTILITY FUNCTIONS                                  */
     /********************************************************************************************/
@@ -79,7 +85,8 @@ contract ExerciseC6C {
     {
         return employees[id].isRegistered;
     }
-
+    
+    
     /********************************************************************************************/
     /*                                     SMART CONTRACT FUNCTIONS                             */
     /********************************************************************************************/
@@ -126,11 +133,22 @@ contract ExerciseC6C {
                                 )
                                 external
                                 // requireContractOwner removing requirement
+                                isCallerAuthorized
     {
         require(employees[id].isRegistered, "Employee is not registered.");
 
         employees[id].sales = employees[id].sales.add(sales);
         employees[id].bonus = employees[id].bonus.add(bonus);
+
+    }
+
+    function authorizeContract(address externalAddress) requireContractOwner external{
+            authorizedContracts[externalAddress] = 1;
+
+    }
+
+        function deAuthorizeContract(address externalAddress) requireContractOwner external{
+            delete authorizedContracts[externalAddress];
 
     }
 
