@@ -15,7 +15,7 @@ contract ExerciseC6A {
     address private contractOwner;                  // Account used to deploy contract
     mapping(address => UserProfile) userProfiles;   // Mapping for storing user profiles
 
-    boolean private operational;
+    bool private operational = true;
 
 
     /********************************************************************************************/
@@ -52,8 +52,9 @@ contract ExerciseC6A {
         _;
     }
 
-    modifier isOperational(){
-        require(operational == true, "Contract is Not operational")
+    modifier requireIsOperational(){
+        require(operational == true, "Contract is Not operational");
+        _;
     }
 
     /********************************************************************************************/
@@ -77,7 +78,7 @@ contract ExerciseC6A {
         return userProfiles[account].isRegistered;
     }
 
-    function setOperational(status bool) requireContractOwner public{
+    function setOperationalStatus( bool status) requireContractOwner public{
         operational = status;
     }
 
@@ -92,7 +93,7 @@ contract ExerciseC6A {
                                 )
                                 external
                                 requireContractOwner
-                                isOperational
+                                requireIsOperational
     {
         require(!userProfiles[account].isRegistered, "User is already registered.");
 
@@ -101,9 +102,11 @@ contract ExerciseC6A {
                                                 isAdmin: isAdmin
                                             });
     }
-}
-
 
     function isOperational() public view returns(bool){
          return operational;
     }
+}
+
+
+    

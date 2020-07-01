@@ -23,5 +23,22 @@ contract('ExerciseC6A', async (accounts) => {
 
   });
 
+  it('contract owner cannot register new user when not operational', async () => {
+    
+    // ARRANGE
+    let caller = accounts[0]; // This should be config.owner or accounts[0] for registering a new user
+    let newUser = config.testAddresses[0]; 
+
+    await config.exerciseC6A.setOperationalStatus(false), {from: caller};
+
+    // ACT
+    await config.exerciseC6A.registerUser(newUser, false, {from: caller});
+    let result = await config.exerciseC6A.isUserRegistered.call(newUser); 
+
+    // ASSERT
+    assert.equal(result, false, "Contract owner can register new user");
+
+  });
+
  
 });
