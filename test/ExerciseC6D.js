@@ -23,6 +23,8 @@ contract('ExerciseC6D', async (accounts) => {
     // Past events
     //events.get((error, logs) => {  });
 
+    
+
   });
 
 
@@ -34,6 +36,8 @@ contract('ExerciseC6D', async (accounts) => {
     // ACT
     for(let a=1; a<TEST_ORACLES_COUNT; a++) {      
       await config.exerciseC6D.registerOracle({ from: accounts[a], value: fee });
+      let oracle = await config.exerciseC6D.getOracle(accounts[a]);
+      console.log(`Oracle Data ${oracle[0]} ${oracle[1]}`);
     }
   });
 
