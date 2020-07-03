@@ -76,7 +76,7 @@ contract ExerciseC6D {
         _;
     }
     modifier checkMessageValue(uint256 value){
-        require(msg.value > REGISTRATION_FEE, "Invalid registration fee, 1 ether required");
+        require(msg.value >= REGISTRATION_FEE, "Invalid registration fee, 1 ether required");
         _;
     }
 

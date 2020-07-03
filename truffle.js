@@ -10,10 +10,10 @@ module.exports = {
       network_id: '*',
       gas: 4356789
     }
-  // },
-  // compilers: {
-  //   solc: {
-  //     //version: "^0.4.25"
-  //   }
+  },
+  compilers: {
+    solc: {
+      version: "^0.4.25"
+    }
   }
 };
