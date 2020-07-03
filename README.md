@@ -16,7 +16,7 @@ and for each exercise run:
 
 To run truffle tests:
 
-`truffle test ./test/ExerciseC6A.js` or `npm test`
+`node_modules/truffle/build/cli.bundled.js test test/ExerciseC6D.js` or `npm test`
 
 ## Resources
 

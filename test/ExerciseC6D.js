@@ -4,7 +4,7 @@ var Test = require('../config/testConfig.js');
 
 contract('ExerciseC6D', async (accounts) => {
 
-  const TEST_ORACLES_COUNT = 20;
+  const TEST_ORACLES_COUNT = 2;
   var config;
   before('setup contract', async () => {
     config = await Test.Config(accounts);
