@@ -9,7 +9,7 @@ To install, download or clone the repo, then move to the required exercise branc
 - `git checkout ExerciseC6A` --> For Stop Loss & MultiParty Consensus
 - `git checkout ExerciseC6B` --> Receive, Transfer & Send Funds
 - `git checkout ExerciseC6C` --> Smart COntract Upgradability
-- `git checkout ExerciseC6D`
+- `git checkout ExerciseC6D` --> Oracles Concepts
 
 and for each exercise run:
 
@@ -20,7 +20,7 @@ and for each exercise run:
 
 To run truffle tests:
 
-`truffle test ./test/ExerciseC6A.js` or `npm test`
+``node_modules/truffle/build/cli.bundled.js test test/ExerciseC6D.js` or `npm test`
 
 ## Resources
 
